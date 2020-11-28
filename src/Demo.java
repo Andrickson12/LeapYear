@@ -2,20 +2,26 @@ import java.util.Scanner;
 
 public class Demo {
 
+    //variables
+    static private boolean isLeap = false;
+
     public static void main (String[] args) {
 
-        //variables
-        int year;
-        boolean isLeap = false;
+        leapFunction();
+
+    }
+
+    public static void leapFunction() {
 
         //Get user input
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter any year");
 
         //Storing user input in year variable
-        year = sc.nextInt();
+        int year = sc.nextInt();
         sc.close();
 
+        //Calculation
         if(year % 4 == 0)
         {
             if( year % 100 == 0)
@@ -26,12 +32,11 @@ public class Demo {
             else
                 isLeap = true;
         }
-
+        //Displaying results based on condition
         if (isLeap) {
             System.out.println(year + " is a Leap Year, prepared.");
         } else {
             System.out.println(year + " is not a Leap Year, relax.");
         }
     }
-
 }
